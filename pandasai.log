@@ -1,0 +1,428 @@
+2024-01-21 23:11:05 [INFO] Question: testing
+
+2024-01-21 23:11:05 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:11:05 [INFO] Prompt ID: ed91b36b-3aab-4dc0-9d37-ebe85f514199
+2024-01-21 23:11:05 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:11:05 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:11:05 [INFO] Using prompt: <dataframe>
+dfs[0]:156x9
+Overall rank,Country or region,Score,GDP per capita,Social support,Healthy life expectancy,Freedom to make life choices,Generosity,Perceptions of corruption
+3,Norway,7.554,1.488,1.582,1.028,0.603,0.271,0.341
+1,Finland,7.769,1.34,1.587,0.986,0.596,0.153,0.393
+2,Denmark,7.6,1.383,1.573,0.996,0.592,0.252,0.41
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: testing
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:11:05 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:11:13 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:11:13 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "string", "value": "Testing successful!"}
+
+result
+            ```
+            
+2024-01-21 23:11:13 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:11:13 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:11:13 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:11:13 [INFO] 
+Code running:
+```
+result = {'type': 'string', 'value': 'Testing successful!'}
+result
+        ```
+2024-01-21 23:11:13 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:11:13 [INFO] Answer: {'type': 'string', 'value': 'Testing successful!'}
+2024-01-21 23:11:13 [INFO] Executed in: 8.408037424087524s
+2024-01-21 23:11:13 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:11:25 [INFO] Question: which country is rank 1?
+2024-01-21 23:11:25 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:11:25 [INFO] Prompt ID: 4a95ca81-175f-4043-86c0-3b257c60212a
+2024-01-21 23:11:25 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:11:25 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:11:26 [INFO] Using prompt: <dataframe>
+dfs[0]:156x9
+Overall rank,Country or region,Score,GDP per capita,Social support,Healthy life expectancy,Freedom to make life choices,Generosity,Perceptions of corruption
+1,Finland,7.769,1.34,1.587,0.986,0.596,0.153,0.393
+3,Norway,7.554,1.488,1.582,1.028,0.603,0.271,0.341
+2,Denmark,7.6,1.383,1.573,0.996,0.592,0.252,0.41
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: which country is rank 1?
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:11:26 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:11:32 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:11:32 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+rank_1_country = dfs[0].loc[dfs[0]['Overall rank'] == 1, 'Country or region'].values[0]
+
+# Declare result var
+result = {
+    "type": "string",
+    "value": f"The country with rank 1 is {rank_1_country}."
+}
+            ```
+            
+2024-01-21 23:11:32 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:11:32 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:11:32 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:11:32 [INFO] 
+Code running:
+```
+rank_1_country = dfs[0].loc[dfs[0]['Overall rank'] == 1, 'Country or region'].values[0]
+result = {'type': 'string', 'value': f'The country with rank 1 is {rank_1_country}.'}
+        ```
+2024-01-21 23:11:32 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:11:32 [INFO] Answer: {'type': 'string', 'value': 'The country with rank 1 is Finland.'}
+2024-01-21 23:11:32 [INFO] Executed in: 6.093050003051758s
+2024-01-21 23:11:32 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:12:24 [INFO] Question: which country has the highest generosity?
+2024-01-21 23:12:24 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:12:24 [INFO] Prompt ID: 5a5a7265-3e30-4232-9a90-0afd6de6987c
+2024-01-21 23:12:24 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:12:24 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:12:24 [INFO] Using prompt: <dataframe>
+dfs[0]:156x9
+Overall rank,Country or region,Score,GDP per capita,Social support,Healthy life expectancy,Freedom to make life choices,Generosity,Perceptions of corruption
+3,Norway,7.554,1.488,1.582,1.028,0.603,0.271,0.341
+1,Finland,7.769,1.34,1.587,0.986,0.596,0.153,0.393
+2,Denmark,7.6,1.383,1.573,0.996,0.592,0.252,0.41
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: which country has the highest generosity?
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:12:24 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:12:30 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:12:30 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+highest_generosity = dfs[0]['Generosity'].max()
+country_highest_generosity = dfs[0].loc[dfs[0]['Generosity'] == highest_generosity, 'Country or region'].values[0]
+
+# Declare result var
+result = {
+    "type": "string",
+    "value": f"The country with the highest generosity is {country_highest_generosity}."
+}
+            ```
+            
+2024-01-21 23:12:30 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:12:30 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:12:30 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:12:30 [INFO] 
+Code running:
+```
+highest_generosity = dfs[0]['Generosity'].max()
+country_highest_generosity = dfs[0].loc[dfs[0]['Generosity'] == highest_generosity, 'Country or region'].values[0]
+result = {'type': 'string', 'value': f'The country with the highest generosity is {country_highest_generosity}.'}
+        ```
+2024-01-21 23:12:30 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:12:30 [INFO] Answer: {'type': 'string', 'value': 'The country with the highest generosity is Myanmar.'}
+2024-01-21 23:12:30 [INFO] Executed in: 6.393944978713989s
+2024-01-21 23:12:30 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:13:47 [INFO] Question: What course is suitable for Leadership?
+2024-01-21 23:13:47 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:13:47 [INFO] Prompt ID: 1de54275-87cf-456d-a4cd-82cd6ee9b6b1
+2024-01-21 23:13:47 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:13:47 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:13:47 [INFO] Using prompt: <dataframe>
+dfs[0]:127x8
+S/N,CourseID,Course Name,Course Duration (in minutes),Primary Domain,Domain,Competency,Audience
+3,8062,3b. Understanding My L...,6,Leadership,Leadership,"Use of Self 1,Use of s...","Manager, Middle Manage..."
+2,88591,BDLQ2: Basic Digital L...,15,Digitalisation,Digitalisation,Basic Digital Literacy...,"Support Officer, Senio..."
+1,91206,1: Develop Self & Lead...,60,Digitalisation,"Digitalisation,Leadership",Digital Strategy and T...,"Middle Management, Sen..."
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: What course is suitable for Leadership?
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:13:47 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:13:52 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:13:52 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+suitable_courses = []
+for df in dfs:
+    suitable_courses.extend(df[df['Primary Domain'] == 'Leadership']['Course Name'].tolist())
+
+# Declare result var
+result = {
+    "type": "string",
+    "value": f"The suitable courses for Leadership are: {', '.join(suitable_courses)}"
+}
+            ```
+            
+2024-01-21 23:13:52 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:13:52 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:13:52 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:13:52 [INFO] 
+Code running:
+```
+suitable_courses = []
+for df in dfs:
+    suitable_courses.extend(df[df['Primary Domain'] == 'Leadership']['Course Name'].tolist())
+result = {'type': 'string', 'value': f"The suitable courses for Leadership are: {', '.join(suitable_courses)}"}
+        ```
+2024-01-21 23:13:52 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:13:52 [INFO] Answer: {'type': 'string', 'value': "The suitable courses for Leadership are: 3b. Understanding My Leadership Style, 1d. Start With the 'Why' - The Purpose of the Journey, 2a. Connecting With My Team, 2b. Aligning Expectations With My Supervisor, 2c. Understanding My Corporate Responsibilities, 2d. Managing My Time, 3a. Growing My Self-Awareness , 3c. Making Time for Reflection, 4a. Conversations That Inspire and Engage, 4b. Sharpening My Listening Skills, 4c. The Power of Questions, 1b. Making Sense of My Leadership Transition, 5a. The Value of Feedback, 5b. A Tool for Effective Feedback, 6a. The Value of Delegation , 1a. I Am Now a Manager - What Does This Mean?, 6b. Preparing to Delegate, 6c. Delegating the Task, 7a. An Introduction to Coaching, 7b. GROW, a Model for Coaching, 8a. What Do I Need to Know About Teams?, 9a. A Guide for Planning Good Meetings, 10b. How Can I Foster Engagement as a Manager? , 10c. Keeping My Staff and Team Engaged, 10d. Staying Engaged at Work, 10a. What is Employee Engagement and Why Does It Matter?, 3d. Going from Peer to Boss, 8b. Understanding Different Generations in My Team, 8c. Managing Different Generations in My Team, 8d. Laying the Foundations for My Team, 8e. Harnessing Team Diversity, 8f. Psychological Safety in Teams, 11a. Performance Management De-mystified, 11b. Setting Goals with my Staff, 11c. Developing My Staff through Feedback, 11d. The Do's and Don'ts of Performance Reviews, 11e. What’s Next after Performance Review?, 12a. Leading your Team in Successful Collaborations, 12b. Tackling Challenges with Collaborative Work, 13a. Enabling Change for My Staff, 3e. Learning to Learn from Experience, 14a. What Does It Mean to Work Effectively with My Boss?, 14b. Examining My Relationship with My Boss, 14c. Understanding My Boss, Helping Yourself Stay Engaged At Work, Helping Your Team Stay Engaged At Work, Helping Individual Staff Stay Engaged at Work, Employee Engagement: Think, Feel, Act, How Can I Build An Innovation Culture?, Attending To Group Dynamics In Teams, Team Development Toolkit, Productive Team Meetings In Organisations, Topic 14: Working Effectively with my Supervisor, Topic 13: Enabling Change, Topic 12: Building Effective Partnerships, Topic 11: Performance Management, Topic 10: Engagement in the Workplace, Topic 9: Making Meetings Matter, Topic 8: Building an Effective Team, Topic 7: The Coaching Manager, Topic 6: Effective Delegation, Topic 5: Effective Feedback, Topic 4: Having Effective Conversations, Topic 2: My Toolkit for the First Month, Topic 1: Laying the Foundations, Introduction to Systems Thinking"}
+2024-01-21 23:13:52 [INFO] Executed in: 5.476073741912842s
+2024-01-21 23:13:52 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:14:19 [INFO] Question: What course is below 60 minutes?
+2024-01-21 23:14:19 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:14:19 [INFO] Prompt ID: 49aad41e-bb2e-4993-bc41-9c18246611de
+2024-01-21 23:14:19 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:14:19 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:14:19 [INFO] Using prompt: <dataframe>
+dfs[0]:127x8
+S/N,CourseID,Course Name,Course Duration (in minutes),Primary Domain,Domain,Competency,Audience
+2,88591,BDLQ2: Basic Digital L...,15,Digitalisation,Digitalisation,Basic Digital Literacy,"Support Officer, Senio..."
+3,8062,3b. Understanding My L...,6,Leadership,Leadership,"Use of Self 1,Use of self 2","Manager, Middle Manage..."
+1,91206,1: Develop Self & Lead...,60,Digitalisation,"Digitalisation,Leadership","Digital Strategy and Transformation,Building Future Readiness 2,Unit Culture - Stewards 12","Middle Management, Sen..."
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: What course is below 60 minutes?
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:14:19 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:14:25 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:14:25 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+df = dfs[0]
+course_below_60 = df[df['Course Duration (in minutes)'] < 60]['Course Name'].values[0]
+
+# Declare result var
+result = {
+    "type": "string",
+    "value": f"The course below 60 minutes is {course_below_60}."
+}
+            ```
+            
+2024-01-21 23:14:25 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:14:25 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:14:25 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:14:25 [INFO] 
+Code running:
+```
+df = dfs[0]
+course_below_60 = df[df['Course Duration (in minutes)'] < 60]['Course Name'].values[0]
+result = {'type': 'string', 'value': f'The course below 60 minutes is {course_below_60}.'}
+        ```
+2024-01-21 23:14:25 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:14:25 [INFO] Answer: {'type': 'string', 'value': 'The course below 60 minutes is BDLQ2: Basic Digital Literacy Quiz.'}
+2024-01-21 23:14:25 [INFO] Executed in: 6.107490301132202s
+2024-01-21 23:14:25 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:14:54 [INFO] Question: What course is below 60 minutes?
+2024-01-21 23:14:54 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:14:54 [INFO] Prompt ID: a7dff9c0-29a0-4793-a5d6-ad294b9bd49a
+2024-01-21 23:14:54 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:14:54 [INFO] Using cached response
+2024-01-21 23:14:54 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:14:54 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:14:54 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:14:54 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:14:54 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:14:54 [INFO] 
+Code running:
+```
+df = dfs[0]
+course_below_60 = df[df['Course Duration (in minutes)'] < 60]['Course Name'].values[0]
+result = {'type': 'string', 'value': f'The course below 60 minutes is {course_below_60}.'}
+        ```
+2024-01-21 23:14:54 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:14:54 [INFO] Answer: {'type': 'string', 'value': 'The course below 60 minutes is BDLQ2: Basic Digital Literacy Quiz.'}
+2024-01-21 23:14:54 [INFO] Executed in: 0.026998281478881836s
+2024-01-21 23:14:54 [INFO] Executing Step 6: ResultParsing
+2024-01-21 23:38:43 [INFO] Question: what courses are availalbe?
+
+2024-01-21 23:38:43 [INFO] Running PandasAI with openai LLM...
+2024-01-21 23:38:43 [INFO] Prompt ID: d23c6724-8b21-4238-b23c-4d16b1162038
+2024-01-21 23:38:43 [INFO] Executing Step 0: CacheLookup
+2024-01-21 23:38:43 [INFO] Executing Step 1: PromptGeneration
+2024-01-21 23:38:43 [INFO] Using prompt: <dataframe>
+dfs[0]:127x8
+S/N,CourseID,Course Name,Course Duration (in minutes),Primary Domain,Domain,Competency,Audience
+3,8062,3b. Understanding My L...,6,Leadership,Leadership,"Use of Self 1,Use of s...","Manager, Middle Manage..."
+1,91206,1: Develop Self & Lead...,60,Digitalisation,"Digitalisation,Leadership",Digital Strategy and T...,"Middle Management, Sen..."
+2,88591,BDLQ2: Basic Digital L...,15,Digitalisation,Digitalisation,Basic Digital Literacy...,"Support Officer, Senio..."
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: what courses are availalbe?
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-21 23:38:43 [INFO] Executing Step 2: CodeGenerator
+2024-01-21 23:38:52 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-21 23:38:52 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+courses = dfs[0]['Course Name'].unique()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {
+    "type": "dataframe",
+    "value": pd.DataFrame(courses, columns=["Course Name"])
+}
+            ```
+            
+2024-01-21 23:38:52 [INFO] Executing Step 3: CachePopulation
+2024-01-21 23:38:52 [INFO] Executing Step 4: CodeExecution
+2024-01-21 23:38:52 [INFO] Saving charts to C:\Users\prisc\OneDrive\Documents\ChatCSV-Streamlit-App\exports\charts\temp_chart.png
+2024-01-21 23:38:52 [INFO] 
+Code running:
+```
+courses = dfs[0]['Course Name'].unique()
+result = {'type': 'dataframe', 'value': pd.DataFrame(courses, columns=['Course Name'])}
+        ```
+2024-01-21 23:38:52 [INFO] Executing Step 5: ResultValidation
+2024-01-21 23:38:52 [INFO] Answer: {'type': 'dataframe', 'value':                                            Course Name
+0                        1: Develop Self & Lead Others
+1                   BDLQ2: Basic Digital Literacy Quiz
+2                3b. Understanding My Leadership Style
+3    1d. Start With the 'Why' - The Purpose of the ...
+4                          2a. Connecting With My Team
+..                                                 ...
+122           BDLID4: Presenting and Interpreting Data
+123             (Optional) Skype for Business Meeting 
+124  BDLCC1: Communicate & Collaborate with the Rig...
+125           BDLID2: What's Fake, What's Real Online?
+126  BDLID1: Upskilling Yourself Personally & Profe...
+
+[127 rows x 1 columns]}
+2024-01-21 23:38:52 [INFO] Executed in: 8.65245008468628s
+2024-01-21 23:38:52 [INFO] Executing Step 6: ResultParsing
