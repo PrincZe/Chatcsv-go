@@ -7,7 +7,7 @@ from pandasai import SmartDataframe
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
-
+openai_api_key = st.secrets["openai_api_key"]
 
 def chat_with_csv(df,prompt):
     llm = OpenAI(api_token=openai_api_key)
