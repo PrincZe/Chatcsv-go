@@ -6,9 +6,7 @@ import pandas as pd
 from pandasai import SmartDataframe
 
 load_dotenv()
-
-
-openai_api_key =''
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 
 def chat_with_csv(df,prompt):
